@@ -97,7 +97,7 @@ export async function getTaskByUser(req, res) {
       return res.status(404).json({ message: "No tasks found" });
     }
 
-    ores.status(200).json(task);
+    res.status(200).json(task);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
