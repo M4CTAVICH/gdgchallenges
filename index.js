@@ -5,6 +5,7 @@ import connectDB from "./src/config/db.js";
 
 import taskRouter from "./src/routes/tasks.js";
 import userRouter from "./src/routes/users.js";
+import authRouter from "./src/routes/auth.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 
 app.use("/tasks", taskRouter);
 app.use("/users", userRouter);
+app.use("/auth", authRouter);
 
 connectDB();
 

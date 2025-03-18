@@ -3,12 +3,26 @@ import User from "..//models/user.js";
 
 export async function getTasks(req, res) {
   try {
-    const tasks = await Task.find().populate("user", "name email");
+    const { page = 1, limit = 10, search = "" } = req.query;
+    console.log(search);
+
+    const tasks = await Task.find({
+      name: {
+        $regex: search,
+        $options: "i",
+      },
+    })
+      .limit(limit * 1)
+      .skip((page - 1) * limit);
+    const count = await Task.countDocuments({});
+
     if (!tasks.length) {
       return res.status(404).json({ message: "No tasks found" });
     }
 
-    res.status(200).json(tasks);
+    res
+      .status(200)
+      .json({ tasks, totalPages: Math.ceil(count / limit), count });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

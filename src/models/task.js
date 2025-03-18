@@ -18,6 +18,10 @@ const taskSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  age: {
+    type: Number,
+    required: true,
+  },
 });
 
 const Task = mongoose.model("Task", taskSchema);
