@@ -1,0 +1,34 @@
+{
+  "name": "mongo-db",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.14.2",
+    "mongoose": "^8.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M4CTAVICH/gdgchallenges.git"
+  },
+  "bugs": {
+    "url": "https://github.com/M4CTAVICH/gdgchallenges/issues"
+  },
+  "homepage": "https://github.com/M4CTAVICH/gdgchallenges#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
